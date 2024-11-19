@@ -1,193 +1,213 @@
 import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const doclistStyles = {
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: 300,
-  fontSize: 24,
-  maxWidth: 560,
-  marginBottom: 30,
-}
+// Componentes
+import HeaderComponent from "../components/header"
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: 16,
-  verticalAlign: "5%",
-}
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  display: `inline-block`,
-  marginBottom: 24,
-  marginRight: 12,
-}
-
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: 14,
-  marginTop: 10,
-  marginBottom: 0,
-  lineHeight: 1.25,
-}
-
-const docLinks = [
-  {
-    text: "TypeScript Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript/",
-    color: "#8954A8",
-  },
-  {
-    text: "GraphQL Typegen Documentation",
-    url: "https://www.gatsbyjs.com/docs/how-to/local-development/graphql-typegen/",
-    color: "#8954A8",
-  }
-]
-
-const badgeStyle = {
-  color: "#fff",
-  backgroundColor: "#088413",
-  border: "1px solid #088413",
-  fontSize: 11,
-  fontWeight: "bold",
-  letterSpacing: 1,
-  borderRadius: 4,
-  padding: "4px 6px",
-  display: "inline-block",
-  position: "relative" as "relative",
-  top: -2,
-  marginLeft: 10,
-  lineHeight: 1,
-}
-
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/getting-started/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#8EB814",
-  },
-  {
-    text: "Build and Host",
-    url: "https://www.gatsbyjs.com/cloud",
-    badge: true,
-    description:
-      "Now you’re ready to show the world! Give your Gatsby site superpowers: Build and host on Gatsby Cloud. Get started for free!",
-    color: "#663399",
-  },
-]
-
-const IndexPage: React.FC<PageProps> = () => {
+const IndexPage = () => {
   return (
-    <main style={pageStyles}>
-      <h1 style={headingStyles}>
-        Congratulations
-        <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! 🎉🎉🎉</span>
-      </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.tsx</code> to see this page
-        update in real-time. 😎
-      </p>
-      <ul style={doclistStyles}>
-        {docLinks.map(doc => (
-          <li key={doc.url} style={docLinkStyle}>
-            <a
-              style={linkStyle}
-              href={`${doc.url}?utm_source=starter&utm_medium=ts-docs&utm_campaign=minimal-starter-ts`}
-            >
-              {doc.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-      <ul style={listStyles}>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter-ts`}
-              >
-                {link.text}
-              </a>
-              {link.badge && (
-                <span style={badgeStyle} aria-label="New Badge">
-                  NEW!
-                </span>
-              )}
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
-      <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
-      />
-    </main>
+    <div>
+        <header id="header" className="header py-10 text-center lg:text-left xl:pb-20">
+          <HeaderComponent />
+            <div className="container px-4 sm:px-8 grid lg:grid lg:grid-cols-2 lg:gap-x-8 flex ">
+                
+                <div className="flex flex-col items-center justify-center lg:items-baseline lg:mt-32 lg:order-1 mb-16 order-2 sm:order-2 xl:mr-12 xl:mt-10">
+                    
+                    <h1 className="mb-5">Sua empresa melhor, direto ao ponto.</h1>
+                    <h2 className="p-large mb-8">Que tal um site leve, um logotipo original ou inovar no que você vende?
+                        Você pensa, nós fazemos!</h2>
+                    <a className="btn-solid-lg page-scroll bg-rosa" href="#features"><i className="fa fa-heart"></i>Saiba Mais</a>
+                </div>
+                <div className="xl:text-right order-1 sm:order-1 m-5 sm:m-20 lg:m-1 lg:order-2">
+                    <img className="inline md:h-96 lg:h-auto lg:m-1" src="images/foguete-3d.png" alt="alternative" />
+                </div>
+            </div>
+        </header>
+        
+
+       
+        <div id="features" className="cards-3">
+            <div className="mb-10">
+                <h3 className="mb-2 lg:max-w-3xl lg:mx-auto">Uma empresa digital e <span className="text-gradient">multidisciplinar</span></h3>
+                <h6>Combinamos nossas habilidades para criar soluções inovadoras e transformar desafios em ótimos resultados.</h6>
+            </div>
+            
+            <div className="container px-4 sm:px-8 xl:px-4 flex flex-col lg:flex-row sm:gap-4">
+
+               
+                <div className="card design-de-servico flex flex-col items-center">
+                    <div className="card-image">
+                        <img src="images/design-de-servico.svg" alt="alternative" />
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Design de Serviço</h5>
+                        <a className="btn-outline-reg popup-with-move-anim" href="#lightbox-design-de-servico">Saiba Mais</a>
+                    </div>
+                </div>
+                
+
+                
+                <div className="card presenca-em-rede flex flex-col items-center">
+                    <div className="card-image">
+                        <img src="images/presenca-em-rede.svg" alt="alternative" />
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Presença em Redes Sociais</h5>
+                        <a className="btn-outline-reg popup-with-move-anim" href="#lightbox-presenca-em-redes-sociais">Saiba Mais</a>
+                    </div>
+                </div>
+                
+
+               
+                <div className="card identidade-visual flex flex-col items-center">
+                    <div className="card-image">
+                        <img src="images/identidade-visual.svg" alt="alternative" />
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Identidade Visual</h5>
+                        <a className="btn-outline-reg popup-with-move-anim" href="#lightbox-identidade-visual">Saiba Mais</a>
+                    </div>
+                </div>
+                
+
+                
+                <div className="card design-de-apps-e-sites flex flex-col items-center">
+                    <div className="card-image">
+                        <img src="images/design-de-apps-e-sites.svg" alt="alternative" />
+                    </div>
+                    <div className="card-body">
+                        <h5 className="card-title">Design de Sites e Aplicativos</h5>
+                        <a className="btn-outline-reg popup-with-move-anim" href="#lightbox-design-de-sites-e-aplicativos">Saiba Mais</a>
+                    </div>
+                </div>
+               
+            </div> 
+        </div> 
+        
+
+        {/* Design de Serviço Lightbox */} 
+        <div id="lightbox-design-de-servico" className="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-x-8">
+                <button title="Fechar (Esc)" type="button" className="mfp-close x-button">×</button>
+                <div className="lg:col-span-12">
+                    <h3 className="mb-2"><img className="h-10" src="images/design-de-servico.svg" alt="Imagem: Design de Serviço" />Design de Serviço</h3>
+                    <hr className="w-11 h-0.5 mt-0.5 mb-4 ml-0 border-none bg-amarelo" />
+                    <p className="mb-6">Te ajudamos a inovar, criando um serviço encantador que supere as expectativas dos clientes e destaque seu diferencial.</p>
+                    <p><strong>Como?</strong> <br />Entendendo seu público e desenhando uma oferta coerente, que vá além da experiência e considere o lado da empresa na hora de fazer ajustes.</p>
+                </div> {/* end of col */}
+            </div> {/* end of row */}
+        </div> {/* end of lightbox-basic */}
+        {/* end of Design de Serviço Lightbox */}
+
+        {/* Presença em Redes Sociais Lightbox */} 
+        <div id="lightbox-presenca-em-redes-sociais" className="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-x-8">
+                <button title="Fechar (Esc)" type="button" className="mfp-close x-button">×</button>
+                <div className="lg:col-span-12">
+                    <h3 className="mb-2"><img className="h-10" src="images/presenca-em-rede.svg" alt="Imagem: Presença em Redes Sociais" />Presença em Redes Sociais</h3>
+                    <hr className="w-11 h-0.5 mt-0.5 mb-4 ml-0 border-none bg-verde" />
+                    <p className="mb-6">Fazemos com que suas postagens tenham total sintonia com a identidade visual da empresa, para atrair o público e elevar o desempenho das suas redes sociais.</p>
+                    <p><strong>Como?</strong> <br />Criando modelos para você não se preocupar com o layout e focar no conteúdo das postagens. Assim, você ganha tempo na hora de postar.</p>
+                </div> {/* end of col */}
+            </div> {/* end of row */}
+        </div> {/* end of lightbox-basic */}
+        {/* end of Presença em Redes Sociais Lightbox */}
+
+        {/* Identidade Visual Lightbox */} 
+        <div id="lightbox-identidade-visual" className="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-x-8">
+                <button title="Fechar (Esc)" type="button" className="mfp-close x-button">×</button>
+                <div className="lg:col-span-12">
+                    <h3 className="mb-2"><img className="h-10" src="images/identidade-visual.svg" alt="Imagem: Identidade Visual" />Identidade Visual</h3>
+                    <hr className="w-11 h-0.5 mt-0.5 mb-4 ml-0 border-none bg-roxo" />
+                    <p className="mb-6">Criamos identidades visuais originais, que refletem a essência do seu negócio, onde cada detalhe é cuidadosamente alinhado à sua marca.</p>
+                    <p><strong>Como?</strong> <br />Construindo o manual de identidade visual, contendo o logotipo, cores e tipos de letra escolhidos para a empresa, além de exemplos de aplicação (canecas, site, camisetas, app).</p>
+                </div> {/* end of col */}
+            </div> {/* end of row */}
+        </div> {/* end of lightbox-basic */}
+        {/* end of Identidade Visual Lightbox */}
+
+        {/* Design de Sites e Aplicativos Lightbox */} 
+        <div id="lightbox-design-de-sites-e-aplicativos" className="lightbox-basic zoom-anim-dialog mfp-hide">
+            <div className="lg:grid lg:grid-cols-12 lg:gap-x-8">
+                <button title="Fechar (Esc)" type="button" className="mfp-close x-button">×</button>
+                <div className="lg:col-span-12">
+                    <h3 className="mb-2"><img className="h-10" src="images/design-de-apps-e-sites.svg" alt="Imagem: Design de Sites e Aplicativos" />Design de Sites e Aplicativos</h3>
+                    <hr className="w-11 h-0.5 mt-0.5 mb-4 ml-0 border-none bg-rosa-escuro" />
+                    <p className="mb-6">Proporcionamos uma experiência de navegação agradável e diferenciada para o seu cliente, seja no site ou em aplicativos.</p>
+                    <p><strong>Como?</strong> <br />Usando as mais recentes tecnologias e tendências de design, desenhamos layouts funcionais e intuitivos, seguindo a identidade visual da sua empresa.</p>
+                </div> {/* end of col */}
+            </div> {/* end of row */}
+        </div> {/* end of lightbox-basic */}
+        {/* end of Design de Sites e Aplicativos Lightbox */}
+         
+
+        {/* end of lightbox */}
+
+        {/* Footer */}
+        <div className="footer">
+            <div className="container px-4 sm:px-8">
+                <h3 className="mb-2 lg:max-w-3xl lg:mx-auto">Vamos bater um papo?</h3>
+                <p className="lg:max-w-3xl lg:mx-auto">Fale com a gente e vamos descobrir, juntos, como podemos te ajudar. </p>
+                <p className="mb-8 lg:max-w-3xl lg:mx-auto">Você também pode entrar em contato utilizando o email <a className="text-rosa">contato@elevainovacao.com.br</a></p>
+                <div className="social-container">
+                    <span className="fa-stack">
+                        <a target="_blank" href="https://www.instagram.com/eleva.inovacao/">
+                            <i className="fas fa-circle fa-stack-2x"></i>
+                            <i className="fab fa-instagram fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span className="fa-stack">
+                        <a target="_blank" href="https://w.app/aZP7jl">
+                            <i className="fas fa-circle fa-stack-2x"></i>
+                            <i className="fab fa-whatsapp fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span className="fa-stack">
+                        <a target="_blank" href="https://facebook.com/elevainovacao">
+                            <i className="fas fa-circle fa-stack-2x"></i>
+                            <i className="fab fa-facebook fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span className="fa-stack">
+                        <a target="_blank" href="mailto:contato@elevainovacao.com.br">
+                            <i className="fas fa-circle fa-stack-2x"></i>
+                            <i className="fa fa-envelope fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </div> {/* end of social-container */}
+            </div> {/* end of container */}
+        </div> {/* end of footer */}
+        {/* end of footer */}
+
+
+        {/* Copyright */}
+        <div className="copyright">
+            <div className="container px-4 sm:px-8">
+
+                <p className="pb-2 p-small statement">Copyright © <span id="data"></span> - <a href="#your-link" className="no-underline">Eleva</a></p>
+            </div> 
+
+        {/* end of container */}
+        </div> {/* end of copyright */}
+        {/* end of copyright */}
+
+
+        {/* Scripts */}
+        <script src="js/jquery.min.js"></script> {/* jQuery for JavaScript plugins */}
+        <script src="js/jquery.easing.min.js"></script> {/* jQuery Easing for smooth scrolling between anchors */}
+        <script src="js/jquery.magnific-popup.js"></script> {/* Magnific Popup for lightboxes */}
+        <script src="js/scripts.js"></script> {/* Custom scripts */}
+        <script>
+            const d = new Date();
+            let year = d.getFullYear();
+            document.getElementById("data").innerHTML = year;
+        </script>
+  </div>
   )
 }
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Home Page</title>
+export const Head: HeadFC = () => <title>Eleva</title>

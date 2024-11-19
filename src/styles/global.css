@@ -1,3 +1,158 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Chrome e outros */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/**************************/
+/*     Cores Eleva        */
+/**************************/
+:root {
+    --bg-roxo: rgba(164, 34, 255, 1);
+    --bg-roxo-escuro: rgba(134, 32, 205, 1);
+    --bg-roxo-claro: rgba(208, 140, 255, 1);
+    
+    --bg-rosa: rgba(248, 72, 109, 1);
+    --bg-rosa-escuro: rgba(209, 46, 80, 1);
+    --bg-rosa-claro: rgba(253, 135, 160, 1);
+    
+    --bg-amarelo: rgba(255, 214, 0, 1);
+    --bg-amarelo-escuro: rgba(255, 190, 9, 1);
+    --bg-amarelo-claro: rgba(246, 222, 99, 1);
+    
+    --bg-verde: rgba(162, 187, 9, 1);
+    --bg-verde-escuro: rgba(253, 135, 160, 1);
+    --bg-verde-claro: rgba(196, 212, 96, 1);
+    
+    --bg-preto: rgba(17, 26, 33, 1);
+    --bg-preto-escuro: rgba(0, 0, 0, 1);
+    --bg-preto-claro: rgba(127, 129, 130, 1);
+}
+
+
+/**************************/
+
+.bg-roxo { background-color: var(--bg-roxo); }
+.bg-roxo-escuro { background-color: var(--bg-roxo-escuro); }
+.bg-roxo-claro { background-color: var(--bg-roxo-claro); }
+
+.bg-rosa { background-color:var(--bg-rosa); }
+.bg-rosa-escuro { background-color: var(--bg-rosa-escuro); }
+.bg-rosa-claro { background-color: var(--bg-rosa-claro); }
+
+.bg-amarelo { background-color: var(--bg-amarelo); }
+.bg-amarelo-escuro { background-color: var(--bg-amarelo-escuro); }
+.bg-amarelo-claro { background-color: var(--bg-amarelo-claro); }
+
+.bg-verde { background-color: var(--bg-verde); }
+.bg-verde-escuro { background-color: var(--bg-verde-escuro); }
+.bg-verde-claro { background-color: var(--bg-verde-claro); }
+
+.bg-preto { background-color: var(--bg-preto); }
+.bg-preto-escuro { background-color: var(--bg-preto-escuro); }
+.bg-preto-claro { background-color: var(--bg-preto-claro); }
+
+/**************************/
+
+.text-roxo { color: var(--bg-roxo); }
+.text-roxo-escuro { color: var(--bg-roxo-escuro); }
+.text-roxo-claro { color: var(--bg-roxo-claro); }
+
+.text-rosa { color:var(--bg-rosa); }
+.text-rosa-escuro { color: var(--bg-rosa-escuro); }
+.text-rosa-claro { color: var(--bg-rosa-claro); }
+
+.text-amarelo { color: var(--bg-amarelo); }
+.text-amarelo-escuro { color: var(--bg-amarelo-escuro); }
+.text-amarelo-claro { color: var(--bg-amarelo-claro); }
+
+.text-verde { color: var(--bg-verde); }
+.text-verde-escuro { color: var(--bg-verde-escuro); }
+.text-verde-claro { color: var(--bg-verde-claro); }
+
+.text-preto { color: var(--bg-preto); }
+.text-preto-escuro { color: var(--bg-preto-escuro); }
+.text-preto-claro { color: var(--bg-preto-claro); }
+
+.text-gradient {
+    background-image: linear-gradient(
+        135deg,
+        var(--bg-roxo),
+        var(--bg-roxo-claro),
+        var(--bg-rosa),
+        var(--bg-rosa-claro),
+        var(--bg-amarelo),
+        var(--bg-amarelo-claro),
+        var(--bg-verde),
+        var(--bg-verde-claro)
+        );
+    color: transparent;
+    background-clip: text;
+}
+
+
+/**************************/
+/*     General Styles     */
+/**************************/
+
+body,
+p {
+    color: var(--bg-preto-claro);
+    font: 400 1rem/1.625rem "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    color: var(--bg-preto);
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 3.125rem;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    color: var(--bg-preto);
+    font-weight: 700;
+    font-size: 2.125rem;
+    line-height: 2.625rem;
+    letter-spacing: -0.4px;
+}
+
+h3 {
+    color: var(--bg-preto);
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.3px;
+}
+
+h4 {
+    color: var(--bg-preto);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: -0.2px;
+}
+
+h5 {
+    color: var(--bg-preto);
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.625rem;
+}
+
+h6 {
+    color: var(--bg-preto);
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.375rem;
+}
