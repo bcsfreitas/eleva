@@ -2,7 +2,7 @@ import * as React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 
 // Componentes
-import HeaderComponent from "../components/header"
+import HeaderComponent from "../components/headerComponent"
 import QuestionarioComponent from "../components/questionario/questionarioComponent"
 
 // Imagens
@@ -17,7 +17,7 @@ const QuestionarioPage: React.FC<PageProps> = () => {
                 
                 <div className="flex flex-col justify-center lg:items-baseline lg:order-1 mb-1 order-2 sm:order-2 xl:mr-12 xl:mt-10">
                     
-                    <h1 className="text-4xl font-extrabold tracking-tighter text-gray-900 sm:text-3xl mb-5">Questionário enviado com sucesso!</h1>
+                    <h1 className="text-4xl font-extrabold tracking-tighter text-gray-900 sm:text-3xl mb-5">Questionário enviado <br />com sucesso!</h1>
                     <p className="text-lg mb-8">Nossa equipe já recebeu o seu questionário e vai começar as avaliações necesárias para te atender da melhor forma possível!.</p>
                     <p className="text-lg mb-8">Entraremos em contato em breve!</p>
                 </div>

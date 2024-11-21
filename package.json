@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@formspree/react": "^2.5.1",
+    "@heroicons/react": "^2.2.0",
     "autoprefixer": "^10.4.20",
     "gatsby": "^5.14.0",
     "gatsby-plugin-image": "^3.14.0",
@@ -30,6 +31,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-input-mask": "^2.0.4",
+    "react-modal": "^3.16.1",
     "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
