@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import type { HeadFC, PageProps } from "gatsby"
+
 import Modal from "react-modal"
+
 const customStyles = { 
     content: { 
         maxWidth: '600px',
@@ -25,6 +27,7 @@ import DesignDeServicoImagem from "../images/design-de-servico.svg"
 import DesignDeAppsImagem from "../images/design-de-apps-e-sites.svg"
 import IdentidadeVisualImagem from "../images/identidade-visual.svg"
 import PresencaEmRedeImagem from "../images/presenca-em-rede.svg"
+import Metadata from '../components/metadata'
 
 
 
@@ -55,13 +58,18 @@ const IndexPage = () => {
         
 
        
-        <div id="features" className="mx-auto max-w-6xl lg:pt-20 px-4 sm:px-8">
-            <div className="mb-10">
-                <h3 className="mb-2 lg:max-w-3xl">Uma empresa digital e <span className="text-gradient">multidisciplinar</span></h3>
-                <p>Combinamos nossas habilidades para criar soluções inovadoras e transformar desafios em ótimos resultados.</p>
+        <div id="features" className="mx-auto max-w-6xl lg:pt-40 pt-20 px-4 sm:px-8">
+
+            <div className="mb-10 max-w-2xl text-center mx-auto">
+            <p className="mt-2 text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl lg:text-balance">
+            Uma empresa digital e <span className="text-gradient">multidisciplinar</span>
+          </p>
+          <p className="mt-4 text-lg/8 text-gray-600">
+          Combinamos nossas habilidades para criar soluções inovadoras e transformar desafios em ótimos resultados.
+          </p>
             </div>
             
-            <div className="container flex flex-col lg:flex-row sm:gap-x-4 gap-y-4">
+            <div className="flex flex-col lg:flex-row sm:gap-x-4 gap-y-4 mt-16 sm:mt-20 lg:mt-24" >
 
                 <div className="flex-1 bg-amarelo flex flex-col items-center p-10 rounded-xl">
                     <div className="bg-white rounded-full p-7 mb-6">
@@ -164,4 +172,8 @@ const IndexPage = () => {
 
 export default IndexPage
 
-export const Head: HeadFC = () => <title>Eleva</title>;
+export const Head: HeadFC = () => (
+<>
+    <Metadata />
+</>
+)
