@@ -7,6 +7,7 @@ import QuestionarioComponent from "../components/questionario/questionarioCompon
 
 // Imagens
 import BriefingImagem from "../images/briefing.png";
+import FooterComponent from "../components/footerComponent";
 
 const QuestionarioPage: React.FC<PageProps> = () => {
     return (
@@ -30,6 +31,7 @@ const QuestionarioPage: React.FC<PageProps> = () => {
             </div>
         </header>
         <QuestionarioComponent />
+        <FooterComponent />
       </div>
     )
 }

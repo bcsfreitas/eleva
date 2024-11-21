@@ -42,12 +42,12 @@ const IndexPage = () => {
                 
                 <div className="flex flex-col items-center justify-center lg:items-baseline lg:mt-32 lg:order-1 mb-16 order-2 sm:order-2 xl:mr-12 xl:mt-10">
                     
-                    <h1 className="mb-5">Sua empresa melhor, direto ao ponto.</h1>
-                    <p className="mb-8">Que tal um site leve, um logotipo original ou inovar no que você vende?
+                    <h1 className="mb-5 text-center lg:text-left">Sua empresa melhor, direto ao ponto.</h1>
+                    <p className="mb-8 text-center lg:text-left">Que tal um site leve, um logotipo original ou inovar no que você vende?
                         Você pensa, nós fazemos!</p>
                     <a className="page-scroll bg-purple-700 hover:bg-purple-800 text-white px-6 pt-3 pb-2.5 rounded-full flex " href="#features"><HeartIcon className=" mt-0.5 mr-2.5 size-5 flex-none" />Saiba Mais</a>
                 </div>
-                <div className="xl:text-right order-1 sm:order-1 m-5 sm:m-20 lg:m-1 lg:order-2">
+                <div className="flex md:justify-center justify-start order-1 sm:order-1 m-5 sm:m-20 lg:m-1 lg:order-2">
                     <img className="inline md:h-96 lg:h-auto lg:m-1" src={FogueteImagem} alt="alternative" />
                 </div>
             </div>
