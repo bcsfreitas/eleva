@@ -58,7 +58,7 @@ const IndexPage = () => {
         
 
        
-        <div id="features" className="mx-auto max-w-6xl lg:pt-40 pt-20 px-4 sm:px-8">
+        <div id="features" className="mx-auto max-w-6xl lg:pt-24 pt-20 px-4 sm:px-8">
 
             <div className="mb-10 max-w-2xl text-center mx-auto">
             <p className="mt-2 text-pretty text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl lg:text-balance">
