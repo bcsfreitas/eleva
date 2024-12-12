@@ -32,7 +32,7 @@ const Metadata = () => {
       <link rel="icon" href={FaviconSvg} type="image/svg+xml" />
       <link rel="apple-touch-icon" href={AppleIcon} />
       <meta name="theme-color" content="#FFFFFF" />
-      </div>
+    </div>
   );
 };
 
